@@ -1,0 +1,36 @@
+.navbar {
+  height: 70px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  border-bottom: 1px solid #e5e5e5;
+  gap: 35px;
+}
+
+.navbar-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f6feb;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+  flex: 1;
+}
+
+.navbar-links a,
+.navbar-auth a {
+  color: #333;
+}
+
+.navbar-links a:hover,
+.navbar-auth a:hover {
+  color: #1f6feb;
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 18px;
+}
