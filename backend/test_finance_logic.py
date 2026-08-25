@@ -49,7 +49,7 @@ def test_investment_closes_loan():
 def test_investment_negative_amount_raises_error():
     loan = Loan(id=1, amount=10000, interest_rate=12.0, term_days=30)
     
-    # Проверяем, что функция вызывает ошибку ValueError
+    # Проверка, что функция вызывает ошибку ValueError
     with pytest.raises(ValueError, match="Сумма инвестиции должна быть больше нуля"):
         process_investment(loan, -500)
 
@@ -63,6 +63,6 @@ def test_invest_in_closed_loan_raises_error():
 def test_investment_exceeds_needed_amount_raises_error():
     loan = Loan(id=1, amount=10000, funded_amount=8000, interest_rate=12.0, term_days=30)
     
-    # Нужно еще 2000, а мы пытаемся дать 3000
+    # Нужно еще 2000, пытаемся дать 3000
     with pytest.raises(ValueError, match="Слишком большая сумма"):
         process_investment(loan, 3000)
