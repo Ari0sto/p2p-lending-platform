@@ -1,4 +1,8 @@
 import asyncio
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from logging.config import fileConfig
 
@@ -14,6 +18,9 @@ from app.models import *
 
 
 config = context.config
+
+if os.getenv("DATABASE_URL"):
+    config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
 
 
 if config.config_file_name is not None:

@@ -41,6 +41,12 @@ class Loan(Base):
         Numeric(10,2)
     )
 
+    # NEW
+    funded_amount: Mapped[float] = mapped_column(
+        Numeric(10,2),
+        default=0.0
+    )
+
 
     interest_rate: Mapped[float] = mapped_column(
         Numeric(5,2)
