@@ -1,0 +1,280 @@
+.my-loans-page {
+  min-height: calc(100vh - 76px);
+  padding: 55px 45px 80px;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(57, 87, 255, 0.12),
+      transparent 30%
+    ),
+    #02091c;
+
+  color: white;
+}
+
+.my-loans-header {
+  max-width: 1400px;
+  margin: 0 auto 38px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.my-loans-badge {
+  display: inline-block;
+  padding: 7px 13px;
+  margin-bottom: 14px;
+
+  border-radius: 20px;
+
+  color: #849aff;
+  background: rgba(83, 107, 255, 0.12);
+  border: 1px solid rgba(94, 119, 255, 0.2);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.my-loans-header h1 {
+  margin: 0 0 9px;
+  font-size: 42px;
+}
+
+.my-loans-header p {
+  margin: 0;
+  color: #93a5c7;
+  font-size: 17px;
+}
+
+.my-loans-count {
+  padding: 12px 17px;
+
+  border-radius: 12px;
+
+  color: #a9b8d8;
+  background: rgba(61, 87, 190, 0.1);
+  border: 1px solid rgba(91, 116, 255, 0.18);
+}
+
+.my-loans-count strong {
+  color: #7990ff;
+}
+
+.my-loans-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fill, minmax(330px, 1fr));
+
+  gap: 24px;
+}
+
+.my-loan-card {
+  padding: 27px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14, 29, 68, 0.98),
+      rgba(6, 16, 40, 0.98)
+    );
+
+  border: 1px solid rgba(94, 118, 255, 0.2);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+.my-loan-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  color: #8394b7;
+  font-size: 13px;
+}
+
+.my-loan-status {
+  padding: 6px 11px;
+  border-radius: 20px;
+
+  color: #8299ff;
+  background: rgba(73, 105, 255, 0.13);
+
+  font-weight: 700;
+}
+
+.my-loan-card h2 {
+  margin: 0 0 14px;
+  font-size: 34px;
+}
+
+.my-loan-description {
+  min-height: 48px;
+
+  margin: 0 0 24px;
+
+  color: #a8b7d4;
+  line-height: 1.55;
+}
+
+.my-loan-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.my-loan-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: rgba(70, 92, 178, 0.08);
+}
+
+.my-loan-info span {
+  color: #788aad;
+  font-size: 12px;
+}
+
+.my-loan-info strong {
+  color: #dae4fa;
+  font-size: 17px;
+}
+
+.my-loan-funding-text {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+
+  color: #8495b8;
+  font-size: 12px;
+}
+
+.my-loan-funding-text strong {
+  color: #bfcae4;
+}
+
+.my-loan-progress {
+  width: 100%;
+  height: 9px;
+
+  overflow: hidden;
+  border-radius: 10px;
+
+  background: #101d3d;
+}
+
+.my-loan-progress div {
+  height: 100%;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #426dff,
+      #7658ff
+    );
+}
+
+.progress-percent {
+  display: block;
+
+  margin-top: 8px;
+
+  text-align: right;
+
+  color: #8497c1;
+  font-size: 12px;
+}
+
+.repay-button {
+  width: 100%;
+
+  margin-top: 22px;
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  color: white;
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      #416cff,
+      #7657ff
+    );
+
+  cursor: pointer;
+}
+
+.repay-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.my-loans-message,
+.my-loans-error,
+.my-loans-empty {
+  max-width: 750px;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.my-loans-error {
+  color: #ff7484;
+}
+
+.my-loans-empty {
+  padding: 45px;
+
+  border-radius: 20px;
+
+  background: rgba(13, 27, 62, 0.8);
+  border: 1px solid rgba(95, 118, 255, 0.17);
+}
+
+.my-loans-empty h2 {
+  margin-top: 0;
+}
+
+.my-loans-empty p {
+  color: #95a6c7;
+}
+
+@media (max-width: 700px) {
+  .my-loans-page {
+    padding: 35px 18px 60px;
+  }
+
+  .my-loans-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .my-loans-header h1 {
+    font-size: 34px;
+  }
+
+  .my-loans-grid {
+    grid-template-columns: 1fr;
+  }
+}

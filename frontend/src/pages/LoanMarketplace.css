@@ -1,0 +1,333 @@
+.marketplace-page {
+  min-height: calc(100vh - 76px);
+  padding: 55px 45px 80px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(56, 85, 255, 0.12),
+      transparent 30%
+    ),
+    #02091c;
+
+  color: white;
+}
+
+.marketplace-header {
+  max-width: 1400px;
+  margin: 0 auto 38px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.marketplace-header h1 {
+  margin: 0 0 10px;
+
+  font-size: 42px;
+}
+
+.marketplace-header p {
+  margin: 0;
+
+  font-size: 18px;
+  color: #94a5c8;
+}
+
+.available-count {
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  background: rgba(66, 91, 197, 0.12);
+  border: 1px solid rgba(94, 119, 255, 0.18);
+
+  color: #aebce0;
+}
+
+.available-count strong {
+  color: #7690ff;
+}
+
+
+/* КАРТКИ */
+
+.loan-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(320px, 1fr));
+
+  gap: 24px;
+}
+
+.loan-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 28, 65, 0.98),
+      rgba(6, 16, 40, 0.98)
+    );
+
+  border:
+    1px solid rgba(91, 116, 255, 0.18);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.loan-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(106, 131, 255, 0.45);
+}
+
+.loan-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+.loan-number {
+  color: #8899bb;
+  font-size: 14px;
+}
+
+.loan-status {
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(73, 112, 255, 0.15);
+
+  color: #819aff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.loan-card h2 {
+  margin: 0 0 15px;
+
+  font-size: 35px;
+
+  color: #ffffff;
+}
+
+.loan-description {
+  min-height: 50px;
+
+  margin: 0 0 24px;
+
+  line-height: 1.55;
+
+  color: #aab8d5;
+}
+
+
+/* СТАВКА + ТЕРМІН */
+
+.loan-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-bottom: 26px;
+}
+
+.loan-data div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  padding: 15px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(65, 89, 174, 0.08);
+}
+
+.loan-data span {
+  font-size: 13px;
+  color: #7f90b4;
+}
+
+.loan-data strong {
+  font-size: 18px;
+  color: #dce5ff;
+}
+
+
+/* ПРОГРЕС */
+
+.funding-block {
+  margin-top: auto;
+}
+
+.funding-info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+
+  font-size: 13px;
+
+  color: #8393b6;
+}
+
+.funding-info strong {
+  color: #c4d0ee;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 9px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #101d3d;
+}
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #416cff,
+      #7656ff
+    );
+}
+
+.remaining {
+  margin: 10px 0 22px;
+
+  font-size: 13px;
+
+  color: #7e90b3;
+}
+
+.remaining strong {
+  color: #b7c5e5;
+}
+
+
+/* КНОПКА */
+
+.loan-details-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  color: white;
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      #416cff,
+      #705aff
+    );
+
+  transition: 0.2s ease;
+}
+
+.loan-details-button:hover {
+  box-shadow:
+    0 8px 20px
+    rgba(72, 91, 255, 0.28);
+}
+
+
+/* СТАНИ */
+
+.marketplace-message,
+.marketplace-error,
+.empty-marketplace {
+  max-width: 800px;
+
+  margin: 80px auto;
+
+  text-align: center;
+}
+
+.marketplace-message {
+  color: #aebce0;
+}
+
+.marketplace-error {
+  color: #ff7485;
+}
+
+.empty-marketplace {
+  padding: 50px;
+
+  border-radius: 22px;
+
+  background: rgba(13, 27, 61, 0.8);
+
+  border:
+    1px solid rgba(94, 116, 255, 0.16);
+}
+
+.empty-marketplace h2 {
+  margin-top: 0;
+}
+
+.empty-marketplace p {
+  color: #97a7c8;
+}
+
+
+
+
+@media (max-width: 750px) {
+  .marketplace-page {
+    padding: 35px 18px 60px;
+  }
+
+  .marketplace-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .marketplace-header h1 {
+    font-size: 34px;
+  }
+
+  .loan-grid {
+    grid-template-columns: 1fr;
+  }
+}

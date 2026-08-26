@@ -1,0 +1,302 @@
+.balance-page {
+  min-height: calc(100vh - 76px);
+  padding: 60px 40px 80px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(57, 88, 255, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(122, 72, 255, 0.12),
+      transparent 30%
+    ),
+    #02091c;
+
+  color: white;
+}
+
+.balance-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+
+  align-items: center;
+}
+
+.balance-badge {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  background: rgba(84, 107, 255, 0.12);
+  border: 1px solid rgba(101, 123, 255, 0.2);
+
+  color: #879cff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.balance-info h1 {
+  margin: 18px 0 20px;
+
+  font-size: 54px;
+}
+
+.balance-info h1 span {
+  color: #768cff;
+}
+
+.balance-info p {
+  max-width: 470px;
+
+  margin: 0;
+
+  color: #a9b9d8;
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.balance-card {
+  padding: 38px;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 29, 68, 0.98),
+      rgba(6, 16, 40, 0.98)
+    );
+
+  border:
+    1px solid rgba(100, 123, 255, 0.22);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.balance-label {
+  color: #8899bb;
+
+  font-size: 13px;
+}
+
+.balance-value {
+  margin: 8px 0 28px;
+
+  font-size: 46px;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.balance-user-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+.balance-user-info div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(66, 88, 170, 0.08);
+}
+
+.balance-user-info span {
+  color: #788aad;
+
+  font-size: 12px;
+}
+
+.balance-user-info strong {
+  color: #dce5fa;
+
+  font-size: 14px;
+}
+
+.deposit-section label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #d8e1f5;
+
+  font-weight: 600;
+}
+
+.deposit-input {
+  position: relative;
+}
+
+.deposit-input input {
+  width: 100%;
+
+  padding: 16px 55px 16px 16px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(95, 118, 209, 0.34);
+
+  background: #07142e;
+
+  color: white;
+
+  outline: none;
+
+  font-size: 17px;
+}
+
+.deposit-input span {
+  position: absolute;
+
+  right: 17px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #8293b7;
+}
+
+.quick-deposit-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin: 14px 0 20px;
+}
+
+.quick-deposit-buttons button {
+  padding: 11px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid rgba(96, 119, 255, 0.18);
+
+  background:
+    rgba(68, 89, 177, 0.08);
+
+  color: #aebde0;
+
+  cursor: pointer;
+}
+
+.quick-deposit-buttons button:hover {
+  border-color: #6d86ff;
+
+  color: white;
+}
+
+.deposit-button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+  border-radius: 13px;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      90deg,
+      #416cff,
+      #7657ff
+    );
+}
+
+.deposit-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+.balance-error,
+.balance-success {
+  margin: 0 0 16px;
+
+  padding: 11px 13px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+}
+
+.balance-error {
+  color: #ff7888;
+
+  background:
+    rgba(255, 70, 90, 0.08);
+}
+
+.balance-success {
+  color: #63ddb1;
+
+  background:
+    rgba(60, 210, 158, 0.08);
+}
+
+.balance-message {
+  text-align: center;
+
+  margin: 90px auto;
+
+  color: #9eafd0;
+}
+
+@media (max-width: 850px) {
+  .balance-wrapper {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .balance-page {
+    padding: 35px 16px 60px;
+  }
+
+  .balance-card {
+    padding: 25px 20px;
+  }
+
+  .balance-info h1 {
+    font-size: 38px;
+  }
+
+  .balance-user-info {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-deposit-buttons {
+    grid-template-columns: 1fr;
+  }
+}
