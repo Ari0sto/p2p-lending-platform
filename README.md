@@ -1,16 +1,92 @@
 # P2P Lending Platform
 
-Платформа для P2P-кредитования, где пользователи могут создавать заявки на кредиты, а инвесторы — финансировать их.
+Платформа для P2P-кредитування (Peer-to-Peer), де користувачі можуть створювати заявки на отримання кредиту, а інвестори — фінансувати їх та отримувати прибуток.
+
+---
 
 ## Команда
-* **Участник 1:** Backend Developer (API, Database, Auth) - [@vikmeln]
-* **Участник 2:** React Developer (Frontend, UI/UX) - [@Anna12121994]
-* **Участник 3:** Financial Logic Developer (Core Logic, Testing, Scoring) - [@Ari0sto]
+* **Учасник 1 (Backend Developer):** API, База даних, Авторизація (JWT), Рольова модель, Транзакції та баланс.
+* **Учасник 2 (React Developer):** Frontend, UI/UX, інтеграція з API.
+* **Учасник 3 (Financial Logic Developer):** Бізнес-логіка інвестицій, валідація, Credit Score (кредитний рейтинг), розрахунок відсотків, Unit-тестування.
 
-## Технологии
-* **Backend:** FastAPI (Python), PostgreSQL / SQLite
-* **Frontend:** React
-* **Testing:** Pytest
+---
 
-## Инструкция по запуску
-*(Здесь позже будут команды `pip install -r requirements.txt` и `npm start`)*
+## Технологічний стек
+* **Backend:** FastAPI (Python), SQLAlchemy (asyncpg), Alembic, Pytest
+* **Database:** PostgreSQL (Docker)
+* **Frontend:** React, Node.js
+
+---
+
+## Основний функціонал (Бекенд)
+Платформа підтримує 3 ролі користувачів:
+
+1. **Borrower (Позичальник):** Може створювати заявки на кредит, отримувати кошти на внутрішній баланс, погашати кредити. Має кредитний рейтинг (Credit Score), який зростає при успішному погашенні та падає при простроченні.
+2. **Investor (Інвестор):** Може поповнювати баланс, переглядати відкриті заявки та інвестувати в них. Після повного збору суми кредит переходить у статус `FUNDED`, а потім `ACTIVE`, і кошти перераховуються позичальнику.
+3. **Admin (Адміністратор):** Має доступ до перегляду всіх користувачів, кредитів та історії транзакцій (режим читання).
+
+*Всі фінансові операції (інвестиції, отримання кредиту, погашення) записуються в історію транзакцій.*
+
+---
+
+## Інструкція із запуску (Backend)
+
+### 1. Запуск бази даних (PostgreSQL в Docker)
+Переконайтеся, що у вас встановлений та запущений Docker. Виконайте команду для створення бази даних:
+```bash
+docker run --name p2p-lending-postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=admin -p 5433:5432 -v p2p_lending_postgres_data:/var/lib/postgresql/data -d postgres:15
+```
+
+### 2. Налаштування середовища (Python)
+Відкрийте термінал у папці `backend` і виконайте наступні кроки:
+
+**Створення та активація віртуального середовища (Windows):**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+*(Для Mac/Linux: `source venv/bin/activate`)*
+
+**Встановлення залежностей:**
+```bash
+pip install -r requirements.txt
+```
+
+**Налаштування `.env` файлу:**
+Створіть файл `.env` у корені папки `backend` і додайте туди конфігурацію бази даних та JWT:
+```env
+DATABASE_URL=postgresql+asyncpg://postgres:admin@localhost:5433/postgres
+JWT_SECRET=super-secret-key-123
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+```
+
+### 3. Застосування міграцій бази даних
+Щоб створити всі необхідні таблиці в базі даних, виконайте:
+```bash
+alembic upgrade head
+```
+
+### 4. Запуск сервера
+```bash
+uvicorn app.main:app --reload
+```
+Після запуску інтерактивна документація API (Swagger) буде доступна за адресою:
+-> http://127.0.0.1:8000/docs
+
+### 5. Запуск тестів (Фінансова логіка)
+Щоб перевірити коректність роботи фінансових алгоритмів та обмежень:
+```bash
+python -m pytest tests/ -v
+```
+
+---
+
+## Інструкція із запуску (Frontend)
+*(Розділ буде доповнено після завершення роботи над React-додатком)*
+
+```bash
+cd frontend
+npm install
+npm start
+```
