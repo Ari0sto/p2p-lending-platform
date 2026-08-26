@@ -14,6 +14,7 @@ from app.services.auth_service import (
     verify_password,
     create_access_token
 )
+from app.services.scoring_logic import get_initial_credit_score
 
 
 router = APIRouter(
@@ -53,7 +54,12 @@ async def register(user_data: UserRegister, db: AsyncSession = Depends(get_db)):
         password_hash=hash_password(
             user_data.password
         ),
-        role=role
+        role=role,
+        credit_score=(
+            get_initial_credit_score()
+            if role == UserRole.BORROWER
+            else 500
+        )
     )
 
     db.add(new_user)

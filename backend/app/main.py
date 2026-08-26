@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import auth, loans, investments
+from app.routers import auth, loans, investments, users, admin
 
 
 app = FastAPI(
@@ -20,10 +20,6 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(loans.router)
 app.include_router(investments.router)
+app.include_router(users.router)
+app.include_router(admin.router)
 
-
-@app.get("/")
-async def root():
-    return {
-        "message": "Сервер працює"
-    }

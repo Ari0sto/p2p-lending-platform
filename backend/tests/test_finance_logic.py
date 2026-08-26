@@ -12,7 +12,7 @@ def test_calculate_expected_return():
     assert profit == 98.63
 
 def test_validate_loan_creation_invalid_amount():
-    with pytest.raises(ValueError, match="Сумма кредита должна быть больше нуля."):
+    with pytest.raises(ValueError, match="Сума кредиту має бути більшою за нуль."):
         validate_loan_creation(0, 10, 30)
 
 def test_process_investment_success():
@@ -35,5 +35,5 @@ def test_process_investment_completes_loan():
 
 def test_process_investment_too_much():
     loan = Loan(amount=10000, funded_amount=8000, status=LoanStatus.OPEN)
-    with pytest.raises(ValueError, match="Сумма превышает потребность."):
+    with pytest.raises(ValueError, match="Сума перевищує потребу."):
         process_investment(loan, 3000)

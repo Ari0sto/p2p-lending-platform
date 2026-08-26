@@ -21,3 +21,14 @@ class LoanResponse(LoanBase):
 
     class Config:
         from_attributes = True
+
+
+class AdminLoanResponse(LoanBase):
+    id: int
+    borrower_email: str
+    funded_amount: float
+    status: LoanStatus
+    created_at: datetime
+
+    class Config:
+        from_attributes = True

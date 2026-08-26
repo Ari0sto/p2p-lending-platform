@@ -19,6 +19,10 @@ class UserLogin(BaseModel):
     password: str
 
 
+class DepositRequest(BaseModel):
+    amount: float
+
+
 class UserResponse(BaseModel):
     id: int
     email: EmailStr
